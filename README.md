@@ -1,7 +1,7 @@
 # cc-web
 (Based on prlx/prlx-nginx-php-fpm:7.3-master)
 
-> A relatively clean but full-featured, usable nginx and php-fpm docker image supporting PHP versions 5.6, 7.1, 7.2 maintained by [Parallax](https://parall.ax/)
+> A relatively clean but full-featured, usable nginx and php-fpm docker image supporting PHP versions 7.3 maintained by [Parallax](https://parall.ax/)
 
 # Environment Variables
 
