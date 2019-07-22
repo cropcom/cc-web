@@ -40,6 +40,12 @@ if [ -z "$DISABLE_CRON" ]; then
 fi
 
 
+# Download config for webapp
+if [ -f /config.sh ]; then
+    printf "%-30s %-30s\n" "Web Config Download Script:" "Running"
+    chmod +x /config.sh && ./config.sh
+fi
+
 # Enable the worker-specific supervisor files
 cp /etc/supervisord-worker/* /etc/supervisord-enabled/
 
