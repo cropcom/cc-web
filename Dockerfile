@@ -222,7 +222,8 @@ RUN apk add --no-cache \
   php7-sqlite3@php \ 
   php7-redis@php \ 
   php7-intl@php \ 
-  php7-fpm@php
+  php7-fpm@php \
+  php7-swoole@php
 
 # Imagick support file types
 RUN apk add --no-cache imagemagick
