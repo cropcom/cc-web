@@ -1,1 +1,1 @@
-It works! Running PHP <?php usleep(200000); echo phpversion(); ?>
+It works! Running PHP <?php usleep(200000); echo phpinfo(); ?>
