@@ -236,6 +236,9 @@ RUN mkdir -p /src && \
 # Install Syslog-ng
 RUN apk add --no-cache syslog-ng
 ADD conf/syslog-ng.conf /syslog-ng.conf
+
+# Install Logrotate
+RUN apk add --no-cache logrotate
 ADD conf/logrotate/syslog-ng /etc/logrotate.d/syslog-ng
 
 # Add Composer

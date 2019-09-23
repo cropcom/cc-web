@@ -5,8 +5,8 @@
 /var/log/mail.log
 /var/log/messages
 {
-    rotate 7
-    size 100M
+    rotate 3
+    size 1M
 	notifempty
 	compress
 	sharedscripts
