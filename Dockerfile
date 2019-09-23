@@ -236,6 +236,7 @@ RUN mkdir -p /src && \
 # Install Syslog-ng
 RUN apk add --no-cache syslog-ng
 ADD conf/syslog-ng.conf /syslog-ng.conf
+ADD conf/logrotate/syslog-ng /etc/logrotate.d/syslog-ng
 
 # Add Composer
 RUN curl https://getcomposer.org/installer -o /tmp/composer-installer && php /tmp/composer-installer --install-dir=/usr/local/bin --filename=composer && rm -f /tmp/composer-installer

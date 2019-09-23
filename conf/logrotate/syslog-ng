@@ -1,0 +1,16 @@
+/var/log/auth.log
+/var/log/boot.log
+/var/log/cron.log
+/var/log/kern.log
+/var/log/mail.log
+/var/log/messages
+{
+    rotate 7
+    size 100M
+	notifempty
+	compress
+	sharedscripts
+	postrotate
+		/etc/init.d/syslog-ng --ifstarted reload >/dev/null
+	endscript
+}
