@@ -240,6 +240,7 @@ ADD conf/syslog-ng.conf /syslog-ng.conf
 # Install Logrotate
 RUN apk add --no-cache logrotate
 ADD conf/logrotate/syslog-ng /etc/logrotate.d/syslog-ng
+RUN sed -i -e "s/\/var\/log\/messages/#\/var\/log\/messages/g" /etc/logrotate.conf
 
 # Add Composer
 RUN curl https://getcomposer.org/installer -o /tmp/composer-installer && php /tmp/composer-installer --install-dir=/usr/local/bin --filename=composer && rm -f /tmp/composer-installer
