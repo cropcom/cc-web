@@ -21,23 +21,7 @@ printf "%-30s %-30s\n" "Nginx Version:" "`/usr/sbin/nginx -v 2>&1 | sed -e 's/ng
 printf "%-30s %-30s\n" "Opcache Memory Max:" "`php -r 'echo ini_get("opcache.memory_consumption");'`M"
 
 # Cron
-# If DISABLE_CRON is set:
-if [ ! -z "$DISABLE_CRON" ]; then
-
-    # Disabled
-    printf "%-30s %-30s\n" "Cron:" "Disabled"
-
-fi
-
-# If not set, enable monitoring:
-if [ -z "$DISABLE_CRON" ]; then
-
-    # Enabled
-    printf "%-30s %-30s\n" "Cron:" "Enabled"
-
-    cp /etc/supervisor.d/cron.conf /etc/supervisord-enabled/
-
-fi
+cp /etc/supervisor.d/cron.conf /etc/supervisord-enabled/
 
 
 # Download config for webapp

@@ -87,6 +87,10 @@ if [ -z "$LOG_IP" ]; then
     printf "%-30s %-30s\n" "Syslog-ng Remote Sync Status" "DISABLED"
 fi
 
+# Cron
+cp /etc/supervisor.d/cron.conf /etc/supervisord-enabled/
+
+
 # Download config for webapp
 if [ -f /config.sh ]; then
     printf "%-30s %-30s\n" "Web Config Download Script:" "Running"

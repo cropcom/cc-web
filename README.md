@@ -18,7 +18,6 @@ For help running these locally with docker run see the [docker run reference](ht
 | LOG_IP                          | IP Address of UDP Log Server (Ignore will not send UDP Log)                                                     | ✖        | ✓   | ✖      |
 | LOG_PORT                        | PORT of UDP Log Server (Default is 1514)                                                                        | ✖        | ✓   | ✖      |
 | LOG_TOKEN                       | Access Token for access Log Server                                                                              | ✖        | ✓   | ✖      |
-| DISABLE_CRON                    | Set to any value (1, true, etc) to disable Cron. Only runs on the worker!                                       | ✖        | ✖   | ✓      |
 
 # The web mode/command
 
@@ -63,15 +62,6 @@ stderr_logfile=/dev/stderr
 stderr_logfile_maxbytes=0
 ```
 
-## Cron Jobs on Worker
-
-The worker has support for cron (can be disabled using DISABLE_CRON). To add a crontab, call it the name of the user you want it to run as (probably 'nobody') and ADD it to /etc/cron.d.
-
-Example:
-
-```
-* * * * * date
-```
 
 # PHP Modules
 | Module        | 5.6 | 7.1 | 7.2 |  7.3 |Notes                                                                                   |
