@@ -251,6 +251,9 @@ ADD conf/supervisor.d /etc/supervisor.d
 RUN mkdir -p /etc/supervisord-enabled && mkdir -p /etc/supervisord-worker
 RUN mkdir -p /var/log/supervisor
 
+# Enable Cron for 'root' user
+ADD conf/cron.d/root /etc/cron.d/root
+
 # Scripts
 ADD scripts/start-web.sh /start-web.sh
 RUN chmod 755 /start-web.sh

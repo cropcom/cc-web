@@ -1,8 +1,7 @@
 /var/log/messages
 {
-    rotate 3
-    size 1M
+    rotate 10
+    size 300K
 	notifempty
-	compress
 	sharedscripts
 }
