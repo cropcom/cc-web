@@ -1,7 +1,9 @@
 /var/log/messages
 {
-    rotate 10
-    size 300K
+    rotate 5
+    size 500M
+	daily
 	notifempty
+	nocompress
 	sharedscripts
 }
