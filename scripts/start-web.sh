@@ -46,11 +46,15 @@ if [ ! -z "$PHP_FPM_WORKERS" ]; then
 fi
 
 # SYSLOG-NG Enable
+# Enable SYSLOG-NG
+printf "%-30s %-30s\n" "Syslog-ng" "ENABLED via Supervisord"
+cp /etc/supervisor.d/syslog-ng.conf /etc/supervisord-enabled/
+
+
 # If set
 if [ ! -z "$LOG_IP" ]; then
     # Replace IP Address of log server and copy config to syslog-ng app
     sed -i -e "s#127.0.0.1#$LOG_IP#g" /syslog-ng.conf
-
 
 
     # If set LOG_PORT
@@ -78,9 +82,8 @@ if [ ! -z "$LOG_IP" ]; then
 
     # Copy edited file to config directory
     cp /syslog-ng.conf /etc/syslog-ng/conf.d/
-    # Enable SYSLOG-NG
-    cp /etc/supervisor.d/syslog-ng.conf /etc/supervisord-enabled/
 fi
+
 
 # If not set LOG_IP
 if [ -z "$LOG_IP" ]; then

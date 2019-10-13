@@ -16,9 +16,14 @@ printf "%-30s %-30s\n" "Site:" "$SITE_NAME"
 printf "%-30s %-30s\n" "PHP Version:" "`php -r 'echo phpversion();'`"
 printf "%-30s %-30s\n" "Nginx Version:" "`/usr/sbin/nginx -v 2>&1 | sed -e 's/nginx version: nginx\///g'`"
 
-
 # Print the real value
 printf "%-30s %-30s\n" "Opcache Memory Max:" "`php -r 'echo ini_get("opcache.memory_consumption");'`M"
+
+# SYSLOG-NG Enable
+# Enable SYSLOG-NG
+printf "%-30s %-30s\n" "Syslog-ng" "ENABLED via Supervisord"
+cp /etc/supervisor.d/syslog-ng.conf /etc/supervisord-enabled/
+
 
 # Cron
 cp /etc/supervisor.d/cron.conf /etc/supervisord-enabled/
