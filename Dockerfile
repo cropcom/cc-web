@@ -242,6 +242,10 @@ RUN apk add --no-cache logrotate
 ADD conf/logrotate/syslog-ng /etc/logrotate.d/syslog-ng
 RUN sed -i -e "s/\/var\/log\/messages/#\/var\/log\/messages/g" /etc/logrotate.conf
 
+# Run rotate trigger more often to run rotate sooner instead of wait for next days
+RUN cp /etc/periodic/daily/logrotate /etc/periodic/hourly/
+RUN cp /etc/periodic/daily/logrotate /etc/periodic/15min/
+
 # Add Composer
 RUN curl https://getcomposer.org/installer -o /tmp/composer-installer && php /tmp/composer-installer --install-dir=/usr/local/bin --filename=composer && rm -f /tmp/composer-installer
 
