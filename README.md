@@ -124,3 +124,7 @@ stderr_logfile_maxbytes=0
 | Zend OPcache  | ✓   | ✓   | ✓   |  ✓   |                                                                                        |
 | zip           | ✓   | ✓   | ✓   |  ✓   |                                                                                        |
 | zlib          | ✓   | ✓   | ✓   |  ✓   |                                                                                        |
+
+# Notes about `syslog-ng`
+
+# Notes about `logrotate`
